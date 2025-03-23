@@ -14,7 +14,7 @@ import { PiLightning } from "react-icons/pi";
 
 export default function Pricing() {
   return (
-    <Maxwidthdiv id="pricing" className="pt-16 md:pt-20">
+    <Maxwidthdiv id="pricing" className="">
       <div className="">
         {/* <div className="mx-auto max-w-2xl space-y-6 text-center"> */}
         {/*   <h1 className="text-center text-4xl font-semibold lg:text-5xl"> */}
@@ -27,11 +27,13 @@ export default function Pricing() {
         {/*   </p> */}
         {/* </div> */}
 
-        <div className="mt-8 grid gap-10 md:mt-20 md:grid-cols-3">
+        <div className="grid gap-10 md:grid-cols-3">
           <Card className="flex flex-col">
             <CardHeader>
               <CardTitle className="font-medium">Free</CardTitle>
-              <span className="my-3 block text-2xl font-semibold">$0 / mo</span>
+              <span className="my-3 block text-2xl font-semibold">
+                $0 / year
+              </span>
               <CardDescription className="text-sm">Per editor</CardDescription>
             </CardHeader>
 
@@ -68,7 +70,7 @@ export default function Pricing() {
               <CardHeader>
                 <CardTitle className="font-medium">Premium</CardTitle>
                 <span className="my-3 block text-2xl font-semibold">
-                  $19 / mo
+                  $19 / year
                 </span>
                 <CardDescription className="text-sm">
                   Per editor
@@ -106,13 +108,13 @@ export default function Pricing() {
             </div>
           </Card>
 
-          <Card className="flex flex-col">
+          <Card className="flex flex-col border border-primary-500">
             <CardHeader>
               <CardTitle className="font-medium flex gap-2">
                 Storm <PiLightning className="text-yellow-500" />
               </CardTitle>
               <span className="my-3 block text-2xl font-semibold">
-                $29 / mo
+                $29 / year
               </span>
               <CardDescription className="text-sm">Per editor</CardDescription>
             </CardHeader>

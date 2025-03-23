@@ -13,23 +13,28 @@ export const meta: MetaFunction = () => {
     { title: "adc" },
     {
       property: "og:title",
-      content: "Very cool app",
+      content:
+        "Next-generation artificial intelligence for the modern enterprise.",
     },
     {
       name: "description",
-      content: "This app is the best",
+      content:
+        "Next-generation artificial intelligence for the modern enterprise.",
     },
   ];
 };
 
 export default function Index() {
   return (
-    <div className="">
+    <div className="flex flex-col gap-40 md:gap-52">
       <div className="absolute top-32 right-10 size-[200px] hidden md:block rounded-full bg-primary-400/25 blur-3xl" />
       <div className="absolute bottom-[700px] left-60 size-[400px] hidden md:block rounded-full bg-primary-400/25 blur-3xl" />
 
       {/* Playground */}
-      <Maxwidthdiv id="models" className="py-32 flex flex-col gap-3 max-w-4xl">
+      <Maxwidthdiv
+        id="models"
+        className="flex mt-10 md:mt-20 flex-col gap-3 max-w-4xl"
+      >
         <div className="gap-10 flex-col mx-auto flex">
           <p className="text-4xl font-bold text-center font-display">
             Ask me about your competitors
@@ -50,7 +55,7 @@ export default function Index() {
       {/* Features */}
       <Maxwidthdiv
         id="features"
-        className="grid grid-cols-1 lg:grid-cols-3 gap-4 my-20"
+        className="grid grid-cols-1 lg:grid-cols-3 gap-4"
       >
         <WobbleCard
           containerClassName="col-span-1 lg:col-span-2 h-full bg-primary-700 min-h-[500px] lg:min-h-[300px]"
@@ -65,6 +70,13 @@ export default function Index() {
               popular AI platform for developers.
             </p>
           </div>
+          <img
+            src="/images/linear.webp"
+            alt="linear demo"
+            width={500}
+            height={500}
+            className="absolute -right-4 lg:-right-[20%] grayscale filter -bottom-10 object-contain rounded-2xl"
+          />
         </WobbleCard>
         <WobbleCard containerClassName="col-span-1 min-h-[300px] bg-neutral-500">
           <h2 className="max-w-80 text-left text-balance text-base md:text-xl lg:text-3xl font-semibold tracking-[-0.015em] text-black">
@@ -85,6 +97,13 @@ export default function Index() {
               popular AI platform for developers.
             </p>
           </div>
+          <img
+            src="/images/linear.webp"
+            alt="linear demo"
+            width={500}
+            height={500}
+            className="absolute -right-4 lg:-right-[10%] grayscale filter -bottom-10 object-contain rounded-2xl"
+          />
         </WobbleCard>
       </Maxwidthdiv>
 

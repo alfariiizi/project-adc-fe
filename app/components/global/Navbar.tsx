@@ -37,7 +37,9 @@ export default function Navbar() {
             </Link>
           ))}
         </ul>
-        <Button variant="default">Get Started</Button>
+        <Button variant="default" size="sm">
+          Get Started
+        </Button>
       </div>
     </nav>
   );

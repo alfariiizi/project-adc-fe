@@ -15,9 +15,9 @@ export default function PropmtSuggestion() {
           key={message}
           to={`/app?message=${encodeURIComponent(message)}`}
           variant="secondary"
-          className="text-wrap h-fit"
+          className="text-wrap h-full opacity-50 text-start"
         >
-          <Typography size="small" className="text-gray-300">
+          <Typography size="small" className="text-gray-300" align="left">
             {message}
           </Typography>
         </Link>
