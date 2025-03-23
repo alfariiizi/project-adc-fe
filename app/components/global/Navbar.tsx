@@ -13,12 +13,12 @@ const menus = [
   },
   {
     name: "Pricing",
-    href: "#",
+    href: "#pricing",
   },
-  {
-    name: "Docs",
-    href: "#",
-  },
+  // {
+  //   name: "Docs",
+  //   href: "#",
+  // },
 ];
 
 export default function Navbar() {

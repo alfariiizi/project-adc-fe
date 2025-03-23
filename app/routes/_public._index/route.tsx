@@ -5,11 +5,13 @@ import Link from "~/components/ui/link";
 import { TbDeviceAnalytics } from "react-icons/tb";
 import { RiWechatLine } from "react-icons/ri";
 import { WobbleCard } from "./components/WobbleCard";
+import Pricing from "./components/Pricing";
 
 export default function Index() {
   return (
     <div className="">
       <div className="absolute top-32 right-10 size-[200px] hidden md:block rounded-full bg-primary-400/25 blur-3xl" />
+      <div className="absolute top-1/2 right-60 size-[400px] hidden md:block rounded-full bg-primary-400/25 blur-3xl" />
 
       {/* Playground */}
       <Maxwidthdiv id="models" className="py-32 flex flex-col gap-3 max-w-4xl">
@@ -70,6 +72,8 @@ export default function Index() {
           </div>
         </WobbleCard>
       </Maxwidthdiv>
+
+      <Pricing />
     </div>
   );
 }
