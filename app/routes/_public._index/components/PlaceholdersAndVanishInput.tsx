@@ -175,7 +175,7 @@ export function PlaceholdersAndVanishInput({
   return (
     <form
       className={cn(
-        "w-full relative mx-auto border-white border h-12 overflow-hidden transition duration-200"
+        "w-full relative mx-auto bg-neutral-900 border-white border h-12 overflow-hidden transition duration-200"
       )}
       onSubmit={handleSubmit}
     >
@@ -206,7 +206,7 @@ export function PlaceholdersAndVanishInput({
       <button
         disabled={!value}
         type="submit"
-        className="absolute right-2 top-1/2 z-50 -translate-y-1/2 h-8 w-8 rounded-none disabled:bg-black bg-black dark:bg-zinc-900 dark:disabled:bg-zinc-800 transition duration-200 flex items-center justify-center"
+        className="absolute right-2 top-1/2 z-50 -translate-y-1/2 h-8 w-8 rounded-none disabled:bg-neutral-900 bg-neutral-900 dark:bg-zinc-900 dark:disabled:bg-zinc-800 transition duration-200 flex items-center justify-center"
       >
         <motion.svg
           xmlns="http://www.w3.org/2000/svg"

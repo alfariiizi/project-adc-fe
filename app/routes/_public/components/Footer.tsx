@@ -3,7 +3,7 @@ import Link from "~/components/ui/link";
 
 export default function Footer() {
   return (
-    <footer className="px-6 py-12 mt-20">
+    <footer className="px-6 py-12 mt-48">
       <div className="container mx-auto">
         <div className="grid md:grid-cols-4 gap-8 mb-12">
           <div>

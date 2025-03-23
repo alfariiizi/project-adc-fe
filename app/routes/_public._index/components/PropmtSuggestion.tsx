@@ -2,9 +2,9 @@ import { Typography } from "~/components/primary/typography";
 import Link from "~/components/ui/link";
 
 const messages = [
-  "What is the capital of Indonesia?",
-  "Who won the 2022 FIFA World Cup?",
-  "Give me the best fried rice recipe",
+  "What feature of product A do users love the most?",
+  "Is there any suggestion to improve my product relatively to my competitors product?",
+  "How they are marketing their product?",
 ];
 
 export default function PropmtSuggestion() {

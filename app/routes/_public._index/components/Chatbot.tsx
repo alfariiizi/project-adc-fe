@@ -5,9 +5,9 @@ export default function Chatbot() {
     <div className="relative">
       <PlaceholdersAndVanishInput
         placeholders={[
-          "Who is Gendon?",
-          "What is the best football club in history?",
-          "Why is the sky blue?",
+          "Why Product A has the best UX?",
+          "How can Product A improve its marketing?",
+          "What is the best feature of Product A?",
         ]}
         onSubmit={() => {}}
         onChange={() => {}}

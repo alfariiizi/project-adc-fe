@@ -5,11 +5,11 @@ import Link from "../ui/link";
 const menus = [
   {
     name: "Models",
-    href: "/models",
+    href: "#models",
   },
   {
     name: "Features",
-    href: "#",
+    href: "#features",
   },
   {
     name: "Pricing",
