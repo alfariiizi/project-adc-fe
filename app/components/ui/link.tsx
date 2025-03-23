@@ -5,18 +5,23 @@ import {
 import { ButtonProps, buttonVariants } from "./button";
 import { cn } from "~/lib/utils";
 
-type LinkProps = LinkPrimitiveProps & ButtonProps;
+type LinkProps = LinkPrimitiveProps &
+  ButtonProps & { icon?: React.ReactNode; iconSide?: "start" | "end" };
 
 export default function Link({
   className,
   variant,
   size,
+  children,
+  icon,
+  iconSide = "start",
   ...props
 }: LinkProps) {
   return (
     <LinkPrimitive
       {...props}
       className={cn(
+        "flex items-center gap-2",
         variant
           ? buttonVariants({
               variant,
@@ -30,6 +35,10 @@ export default function Link({
           : undefined,
         className
       )}
-    />
+    >
+      {icon && iconSide === "start" && icon}
+      {children}
+      {icon && iconSide === "end" && icon}
+    </LinkPrimitive>
   );
 }

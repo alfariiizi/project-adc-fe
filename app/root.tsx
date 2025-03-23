@@ -7,6 +7,7 @@ import {
   ScrollRestoration,
 } from "@remix-run/react";
 import type { LinksFunction } from "@remix-run/node";
+import Providers from "./components/global/Providers";
 
 export const links: LinksFunction = () => [
   { rel: "preconnect", href: "https://fonts.googleapis.com" },
@@ -34,8 +35,8 @@ export function Layout({ children }: { children: React.ReactNode }) {
         <Meta />
         <Links />
       </head>
-      <body className="bg-black text-slate-50">
-        {children}
+      <body className="bg-black font-sans text-slate-50">
+        <Providers>{children}</Providers>
         <ScrollRestoration />
         <Scripts />
       </body>
