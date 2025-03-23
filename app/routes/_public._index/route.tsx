@@ -6,12 +6,27 @@ import { TbDeviceAnalytics } from "react-icons/tb";
 import { RiWechatLine } from "react-icons/ri";
 import { WobbleCard } from "./components/WobbleCard";
 import Pricing from "./components/Pricing";
+import { MetaFunction } from "@remix-run/node";
+
+export const meta: MetaFunction = () => {
+  return [
+    { title: "adc" },
+    {
+      property: "og:title",
+      content: "Very cool app",
+    },
+    {
+      name: "description",
+      content: "This app is the best",
+    },
+  ];
+};
 
 export default function Index() {
   return (
     <div className="">
       <div className="absolute top-32 right-10 size-[200px] hidden md:block rounded-full bg-primary-400/25 blur-3xl" />
-      <div className="absolute top-1/2 right-60 size-[400px] hidden md:block rounded-full bg-primary-400/25 blur-3xl" />
+      <div className="absolute bottom-[700px] left-60 size-[400px] hidden md:block rounded-full bg-primary-400/25 blur-3xl" />
 
       {/* Playground */}
       <Maxwidthdiv id="models" className="py-32 flex flex-col gap-3 max-w-4xl">

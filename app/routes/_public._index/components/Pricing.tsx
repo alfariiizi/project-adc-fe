@@ -10,6 +10,7 @@ import {
 import { Check } from "lucide-react";
 import { Maxwidthdiv } from "~/components/primary/max-width-div";
 import Link from "~/components/ui/link";
+import { PiLightning } from "react-icons/pi";
 
 export default function Pricing() {
   return (
@@ -107,7 +108,9 @@ export default function Pricing() {
 
           <Card className="flex flex-col">
             <CardHeader>
-              <CardTitle className="font-medium">Storm</CardTitle>
+              <CardTitle className="font-medium flex gap-2">
+                Storm <PiLightning className="text-yellow-500" />
+              </CardTitle>
               <span className="my-3 block text-2xl font-semibold">
                 $29 / mo
               </span>
