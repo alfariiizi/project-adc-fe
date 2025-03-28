@@ -9,7 +9,7 @@ import {
 } from "~/components/ui/card";
 import { Check } from "lucide-react";
 import { Maxwidthdiv } from "~/components/primary/max-width-div";
-import Link from "~/components/ui/link";
+import {Link} from "~/components/ui/link";
 import { PiLightning } from "react-icons/pi";
 
 export default function Pricing() {

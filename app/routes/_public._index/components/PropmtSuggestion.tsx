@@ -1,5 +1,5 @@
 import { Typography } from "~/components/primary/typography";
-import Link from "~/components/ui/link";
+import {Link} from "~/components/ui/link";
 
 const messages = [
   "What feature of product A do users love the most?",

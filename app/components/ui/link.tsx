@@ -8,7 +8,7 @@ import { cn } from "~/lib/utils";
 type LinkProps = LinkPrimitiveProps &
   ButtonProps & { icon?: React.ReactNode; iconSide?: "start" | "end" };
 
-export default function Link({
+function Link({
   className,
   variant,
   size,
@@ -42,3 +42,6 @@ export default function Link({
     </LinkPrimitive>
   );
 }
+
+export { Link };
+export default Link;

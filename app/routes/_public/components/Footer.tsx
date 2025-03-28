@@ -1,12 +1,14 @@
 import AppLogo from "~/components/primary/app-logo";
-import Link from "~/components/ui/link";
+import { Mapper } from "~/components/primary/mapper";
+import { Link } from "~/components/ui/link";
+import { company, products, resources } from "~/shared/menus";
 
 export default function Footer() {
   return (
     <footer className="px-6 py-12 mt-48">
       <div className="container mx-auto">
-        <div className="grid md:grid-cols-4 gap-8 mb-12">
-          <div>
+        <div className="grid md:grid-cols-8 gap-8 mb-12">
+          <div className="md:col-span-5 max-w-md">
             <AppLogo className="text-3xl" />
             <p className="text-gray-400">
               Next-generation artificial intelligence for the modern enterprise.
@@ -14,78 +16,39 @@ export default function Footer() {
           </div>
           <div>
             <h3 className="text-lg font-bold mb-4">Products</h3>
-            <ul className="space-y-2 text-gray-400">
-              <li>
-                <Link to="#" className="hover:text-purple-400">
-                  Text AI
+            <Mapper
+              data={products}
+              renderItem={(product) => (
+                <Link to={product.href} variant="link">
+                  {product.title}
                 </Link>
-              </li>
-              <li>
-                <Link to="#" className="hover:text-purple-400">
-                  Vision AI
-                </Link>
-              </li>
-              <li>
-                <Link to="#" className="hover:text-purple-400">
-                  Predictive AI
-                </Link>
-              </li>
-              <li>
-                <Link to="#" className="hover:text-purple-400">
-                  Custom Solutions
-                </Link>
-              </li>
-            </ul>
+              )}
+              className="space-y-2 text-neutral-400"
+            />
           </div>
           <div>
             <h3 className="text-lg font-bold mb-4">Resources</h3>
-            <ul className="space-y-2 text-gray-400">
-              <li>
-                <Link to="#" className="hover:text-purple-400">
-                  Documentation
+            <Mapper
+              data={resources}
+              renderItem={(item) => (
+                <Link to={item.href} variant="link">
+                  {item.title}
                 </Link>
-              </li>
-              <li>
-                <Link to="#" className="hover:text-purple-400">
-                  API Reference
-                </Link>
-              </li>
-              <li>
-                <Link to="#" className="hover:text-purple-400">
-                  Blog
-                </Link>
-              </li>
-              <li>
-                <Link to="#" className="hover:text-purple-400">
-                  Case Studies
-                </Link>
-              </li>
-            </ul>
+              )}
+              className="space-y-2 text-neutral-400"
+            />
           </div>
           <div>
             <h3 className="text-lg font-bold mb-4">Company</h3>
-            <ul className="space-y-2 text-gray-400">
-              <li>
-                <Link to="#" className="hover:text-purple-400">
-                  About Us
+            <Mapper
+              data={company}
+              renderItem={(item) => (
+                <Link to={item.href} variant="link">
+                  {item.title}
                 </Link>
-              </li>
-              <li>
-                <Link to="#" className="hover:text-purple-400">
-                  Careers
-                </Link>
-              </li>
-              <li>
-                <Link to="#" className="hover:text-purple-400">
-                  Contact
-                </Link>
-              </li>
-              <li>
-                <Link to="#" className="hover:text-purple-400">
-                  Press
-                </Link>
-              </li>
-            </ul>
+              )}
+              className="z-10 space-y-2 text-neutral-400"
+            />
           </div>
         </div>
         <div className="pt-8 flex flex-col md:flex-row justify-between items-center">

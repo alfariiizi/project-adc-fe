@@ -1,24 +1,56 @@
+import React from "react";
 import AppLogo from "../primary/app-logo";
 import { Button } from "../ui/button";
-import Link from "../ui/link";
+import { Link } from "../ui/link";
+import {
+  NavigationMenu,
+  NavigationMenuContent,
+  NavigationMenuItem,
+  NavigationMenuList,
+  NavigationMenuTrigger,
+  NavigationMenuLink,
+  navigationMenuTriggerStyle,
+} from "~/components/ui/navigation-menu";
+import { cn } from "~/lib/utils";
+import { Mapper } from "../primary/mapper";
+import { company, products, resources } from "~/shared/menus";
 
-const menus = [
+const components: { title: string; href: string; description: string }[] = [
   {
-    name: "Models",
-    href: "#models",
+    title: "Alert Dialog",
+    href: "/docs/primitives/alert-dialog",
+    description:
+      "A modal dialog that interrupts the user with important content and expects a response.",
   },
   {
-    name: "Features",
-    href: "#features",
+    title: "Hover Card",
+    href: "/docs/primitives/hover-card",
+    description:
+      "For sighted users to preview content available behind a link.",
   },
   {
-    name: "Pricing",
-    href: "#pricing",
+    title: "Progress",
+    href: "/docs/primitives/progress",
+    description:
+      "Displays an indicator showing the completion progress of a task, typically displayed as a progress bar.",
   },
-  // {
-  //   name: "Docs",
-  //   href: "#",
-  // },
+  {
+    title: "Scroll-area",
+    href: "/docs/primitives/scroll-area",
+    description: "Visually or semantically separates content.",
+  },
+  {
+    title: "Tabs",
+    href: "/docs/primitives/tabs",
+    description:
+      "A set of layered sections of content—known as tab panels—that are displayed one at a time.",
+  },
+  {
+    title: "Tooltip",
+    href: "/docs/primitives/tooltip",
+    description:
+      "A popup that displays information related to an element when the element receives keyboard focus or the mouse hovers over it.",
+  },
 ];
 
 export default function Navbar() {
@@ -30,13 +62,7 @@ export default function Navbar() {
             <AppLogo />
           </Link>
         </div>
-        <ul className="hidden md:flex space-x-8">
-          {menus.map((menu) => (
-            <Link key={menu.name} to={menu.href} variant="link">
-              {menu.name}
-            </Link>
-          ))}
-        </ul>
+        <NavbarMenu />
         <Button variant="default" size="sm">
           Get Started
         </Button>
@@ -44,3 +70,83 @@ export default function Navbar() {
     </nav>
   );
 }
+
+function NavbarMenu() {
+  return (
+    <NavigationMenu className="hidden md:block">
+      <NavigationMenuList>
+        <NavigationMenuItem>
+          <NavigationMenuTrigger>Products</NavigationMenuTrigger>
+          <NavigationMenuContent>
+            <Mapper
+              data={products}
+              className="p-4 w-[300px] flex flex-col gap-4"
+              renderItem={(product) => (
+                <ListItem title={product.title} href={product.href}>
+                  {product.description}
+                </ListItem>
+              )}
+            />
+          </NavigationMenuContent>
+        </NavigationMenuItem>
+        <NavigationMenuItem>
+          <NavigationMenuTrigger>Resources</NavigationMenuTrigger>
+          <NavigationMenuContent>
+            <Mapper
+              data={resources}
+              className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px] "
+              renderItem={(item) => (
+                <ListItem title={item.title} href={item.href}>
+                  {item.description}
+                </ListItem>
+              )}
+            />
+          </NavigationMenuContent>
+        </NavigationMenuItem>
+        <NavigationMenuItem>
+          <NavigationMenuTrigger>Company</NavigationMenuTrigger>
+          <NavigationMenuContent>
+            <Mapper
+              data={company}
+              className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px] "
+              renderItem={(item) => (
+                <ListItem title={item.title} href={item.href}>
+                  {item.description}
+                </ListItem>
+              )}
+            />
+            {/* <Link to="/docs" className={navigationMenuTriggerStyle()}> */}
+            {/*   Documentations */}
+            {/* </Link> */}
+          </NavigationMenuContent>
+        </NavigationMenuItem>
+      </NavigationMenuList>
+    </NavigationMenu>
+  );
+}
+
+const ListItem = React.forwardRef<
+  React.ElementRef<"a">,
+  React.ComponentPropsWithoutRef<"a">
+>(({ className, title, children, ...props }, ref) => {
+  return (
+    <div className="h-full">
+      <NavigationMenuLink asChild>
+        <a
+          ref={ref}
+          className={cn(
+            "block select-none space-y-1 rounded-md p-3 h-full leading-none no-underline outline-none transition-colors hover:bg-primary-700 hover:text-accent-foreground focus:bg-primary-700 focus:text-accent-foreground",
+            className
+          )}
+          {...props}
+        >
+          <div className="text-sm font-medium leading-none">{title}</div>
+          <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
+            {children}
+          </p>
+        </a>
+      </NavigationMenuLink>
+    </div>
+  );
+});
+ListItem.displayName = "ListItem";

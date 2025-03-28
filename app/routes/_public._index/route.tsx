@@ -1,7 +1,7 @@
 import { Maxwidthdiv } from "~/components/primary/max-width-div";
 import Chatbot from "./components/Chatbot";
 import PropmtSuggestion from "./components/PropmtSuggestion";
-import Link from "~/components/ui/link";
+import { Link } from "~/components/ui/link";
 import { TbDeviceAnalytics } from "react-icons/tb";
 import { RiWechatLine } from "react-icons/ri";
 import { WobbleCard } from "./components/WobbleCard";
@@ -33,7 +33,7 @@ export default function Index() {
       {/* Playground */}
       <Maxwidthdiv
         id="models"
-        className="flex mt-10 md:mt-20 flex-col gap-3 max-w-4xl"
+        className="flex mt-10 md:mt-28 flex-col gap-3 max-w-4xl"
       >
         <div className="gap-10 flex-col mx-auto flex">
           <p className="text-4xl font-bold text-center font-display">
