@@ -25,7 +25,7 @@ body {
     --secondary-foreground: 0 0% 98%;
     --muted: 0 0% 14.9%;
     --muted-foreground: 0 0% 63.9%;
-    --accent: 0 0% 14.9%;
+    --accent: 283 45% 25%;
     --accent-foreground: 0 0% 98%;
     --destructive: 0 62.8% 30.6%;
     --destructive-foreground: 0 0% 98%;
@@ -38,8 +38,8 @@ body {
     --chart-3: 30 80% 55%;
     --chart-4: 280 65% 60%;
     --chart-5: 340 75% 55%;
-    --sidebar-background: 240 5.9% 10%;
-    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-background: 0 0% 0%;
+    --sidebar-foreground: 0 0% 98%;
     --sidebar-primary: 224.3 76.3% 48%;
     --sidebar-primary-foreground: 0 0% 100%;
     --sidebar-accent: 240 3.7% 15.9%;
@@ -69,4 +69,25 @@ body {
   body {
     @apply bg-background text-foreground;
   }
+}
+
+::-webkit-scrollbar-track {
+  padding: 20px 10px;
+  margin: 0px;
+  background-color: #262626;
+  border-radius: 0rem;
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+  margin: 0px;
+  border-radius: 0rem;
+  padding: 20px 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 0px;
+  margin: 0px;
+  background-color: #525252;
+  padding: 20px 10px;
 }
